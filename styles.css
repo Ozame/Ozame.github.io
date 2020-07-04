@@ -1,0 +1,162 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+main {
+    display: grid;
+    width: 95%;
+    height: 100%;
+    padding: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+}
+
+nav {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    padding: 5px;
+    
+
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: #45BA5C;
+    
+}
+
+
+.intro p {
+
+}
+
+.intro {
+    grid-column: 2/3;
+    grid-row: 3/4;
+    padding: 5px;
+}
+
+.name {
+    text-transform: uppercase;
+    text-align: center;
+    
+    grid-column: 1/2;
+    grid-row: 1/4;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-columns: repeat(7, 1fr);
+    gap: 4px;   
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    
+}
+
+h1 span {
+    background-color: hsl(132, 46%, 50%);
+    border-radius: 5px;
+
+    /* Change  this if no bg color */
+    display: inline;
+    padding: calc((100% - 1em) / 2) 0;
+}
+
+h1 span:nth-child(1) {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+
+h1 span:nth-child(2) {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+
+h1 span:nth-child(3) {
+    grid-column: 5;
+    grid-row: 2;
+}
+
+h1 span:nth-child(4) {
+    grid-column: 7;
+    grid-row: 2;
+}
+
+h1 span:nth-child(5) {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+h1 span:nth-child(6) {
+    grid-column: 5;
+    grid-row: 3;
+}
+
+h1 span:nth-child(7) {
+    grid-column: 3;
+    grid-row: 4 ;
+}
+
+
+h1 span:nth-child(8) {
+    grid-column: 5;
+    grid-row: 4;
+}
+
+
+h1 span:nth-child(9) {
+    grid-column: 7;
+    grid-row: 4;
+}
+
+h1 span:nth-child(10) {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+
+h1 span:nth-child(11) {
+    grid-column: 6;
+    grid-row: 5;
+}
+
+
+h1 span:nth-child(12) {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+h1 span:nth-child(13) {
+    grid-column: 6;
+    grid-row: 6;
+}
+
+
+h1 span:nth-child(14) {
+    grid-column: 5;
+    grid-row: 7;
+}
+
+
+h1 span:nth-child(15) {
+    grid-column: 7;
+    grid-row: 7;
+}
