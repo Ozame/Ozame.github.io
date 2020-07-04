@@ -39,13 +39,12 @@ nav ul {
 a {
     text-decoration: none;
     color: #45BA5C;
+    font-weight: bold;
     
 }
 
 
-.intro p {
 
-}
 
 .intro {
     grid-column: 2/3;
