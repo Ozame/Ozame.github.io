@@ -36,10 +36,17 @@ nav ul {
     height: 100%;
 }
 
+nav li:nth-child(odd) a {
+    background-color: #308240;
+    color: white;
+}
 a {
     text-decoration: none;
     color: #45BA5C;
     font-weight: bold;
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
     
 }
 
@@ -61,9 +68,11 @@ a {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-columns: repeat(7, 1fr);
-    gap: 4px;   
+    gap: 8px;   
     width: 100%;
     max-width: 500px;
+    min-width: 300px;
+    min-height: 300px;
     height: auto;
     
 }
@@ -75,6 +84,15 @@ h1 span {
     /* Change  this if no bg color */
     display: inline;
     padding: calc((100% - 1em) / 2) 0;
+
+    transition-duration: 0.5s;
+
+    
+}
+
+h1 span:hover {
+    transform: scale(1.2);
+    transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
 }
 
 h1 span:nth-child(1) {
