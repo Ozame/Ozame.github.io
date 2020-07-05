@@ -1,3 +1,8 @@
+:root {
+    --animation-duration: 28s;
+    --animation-delay: 2s;
+}
+
 * {
     padding: 0;
     margin: 0;
@@ -86,94 +91,136 @@ h1 span {
     padding: calc((100% - 1em) / 2) 0;
 
     transition-duration: 0.5s;
-
+    animation-timing-function: linear;
+    animation-name: bobble;
+    animation-iteration-count: infinite;
+    animation-duration: var(--animation-duration);
     
 }
 
-h1 span:hover {
+@keyframes bobble {
+    0%, 10% {
+        transform: scale(1);
+    }
+
+    5% {
+        transform: scale(1.2);
+    }
+}
+
+/* h1 span:hover {
     transform: scale(1.2);
     transition-timing-function: cubic-bezier(0.47, 2.02, 0.31, -0.36);
-}
+} */
 
 h1 span:nth-child(1) {
     grid-column: 3;
     grid-row: 1;
+
 }
 
 
 h1 span:nth-child(2) {
     grid-column: 4;
     grid-row: 1;
+
+    animation-delay: calc(var(--animation-delay) * 1);
 }
 
 
 h1 span:nth-child(3) {
     grid-column: 5;
     grid-row: 2;
+
+    animation-delay: calc(var(--animation-delay) * 2);
 }
 
 h1 span:nth-child(4) {
     grid-column: 7;
     grid-row: 2;
+
+    animation-delay: calc(var(--animation-delay) * 3);
 }
 
 h1 span:nth-child(5) {
     grid-column: 1;
     grid-row: 3;
+
+    animation-delay: calc(var(--animation-delay) * 4);
 }
 
 h1 span:nth-child(6) {
     grid-column: 5;
     grid-row: 3;
+    
+    animation-delay: calc(var(--animation-delay) * 5);
 }
 
 h1 span:nth-child(7) {
     grid-column: 3;
     grid-row: 4 ;
+
+    animation-delay: calc(var(--animation-delay) * 6);
 }
 
 
 h1 span:nth-child(8) {
     grid-column: 5;
     grid-row: 4;
+
+    animation-delay: calc(var(--animation-delay) * 7);
 }
 
 
 h1 span:nth-child(9) {
     grid-column: 7;
     grid-row: 4;
+
+    animation-delay: calc(var(--animation-delay) * 8);
 }
 
 h1 span:nth-child(10) {
     grid-column: 3;
     grid-row: 5;
+
+    animation-delay: calc(var(--animation-delay) * 9);
 }
 
 
 h1 span:nth-child(11) {
     grid-column: 6;
     grid-row: 5;
+
+    animation-delay: calc(var(--animation-delay) * 10);
 }
 
 
 h1 span:nth-child(12) {
     grid-column: 1;
     grid-row: 6;
+
+    animation-delay: calc(var(--animation-delay) * 11);
 }
 
 h1 span:nth-child(13) {
     grid-column: 6;
     grid-row: 6;
+
+    animation-delay: calc(var(--animation-delay) * 12);
 }
 
 
 h1 span:nth-child(14) {
     grid-column: 5;
     grid-row: 7;
+
+    animation-delay: calc(var(--animation-delay) * 13);
 }
 
 
 h1 span:nth-child(15) {
     grid-column: 7;
     grid-row: 7;
+
+    animation-delay: calc(var(--animation-delay) * 14);
 }
