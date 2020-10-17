@@ -12,6 +12,7 @@
 html,
 body {
     height: 100%;
+    width: 100%;
     background-color: #242423;
 }
 
@@ -69,7 +70,7 @@ nav a {
     font-weight: bold;
     width: calc(100% - 20px);
     height: 100%;
-    font-size: 2vh;
+    font-size: 1.2em;
     padding: 5px 10px;
 
     display: flex;
@@ -77,9 +78,6 @@ nav a {
     justify-content: center;
 
 }
-
-
-
 
 .intro {
     grid-column: 2/3;
@@ -89,11 +87,11 @@ nav a {
 
 .intro-container{
     display: flex;
-    padding: 8px;
+    padding: 4px;
     background-color: #45ba5c;
     color: whitesmoke;
     border-radius: 16px;
-    box-shadow: 4px 4px #6e8873;
+    box-shadow: 4px 4px 8px #37583e;
 }
 
 .image-profile {
