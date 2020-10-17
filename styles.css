@@ -107,6 +107,7 @@ nav a {
 .name {
     text-transform: uppercase;
     text-align: center;
+    padding: 8px;
 
     grid-column: 1/2;
     grid-row: 1/4;
