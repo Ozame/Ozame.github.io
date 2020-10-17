@@ -6,9 +6,11 @@
 * {
     padding: 0;
     margin: 0;
+    font-family: 'Chilanka', cursive;
 }
 
-html, body {
+html,
+body {
     height: 100%;
 }
 
@@ -16,20 +18,22 @@ body {
     display: flex;
     justify-content: center;
 }
+
 main {
     display: grid;
-    width: 95%;
+    width: 100%;
     height: 100%;
     padding: 5px;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: 50vmin, 1fr;
+    /* grid-template-rows: repeat(5, 1fr); */
+    gap: 8px;
 }
 
 nav {
     grid-column: 2/3;
-    grid-row: 2/3;
+    grid-row: 1/2;
     padding: 2px;
-    
+
 
 }
 
@@ -53,10 +57,11 @@ nav li {
     justify-content: center;
 }
 
-nav li:nth-child(odd) a{
+nav li:nth-child(odd) a {
     background-color: #308240;
     color: white;
 }
+
 nav a {
     text-decoration: none;
     color: #308240;
@@ -69,7 +74,7 @@ nav a {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    
+
 }
 
 
@@ -77,8 +82,15 @@ nav a {
 
 .intro {
     grid-column: 2/3;
-    grid-row: 3/4;
-    padding: 5px;
+    grid-row: 2/3;
+    font-size: 1.2em;
+}
+
+.intro div {
+    padding: 8px;
+    background-color: #b2ddbb;
+    border-radius: 12px;
+    box-shadow: 4px 4px #6e8873;
 }
 
 .name {
@@ -89,34 +101,63 @@ nav a {
     grid-row: 1/4;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-columns: repeat(7, 1fr);
-    gap: 8px;   
-    width: 100%;
+    grid-template-rows: repeat(7, 1fr);
+    gap: 8px;
+    width: 50vmin;
     max-width: 500px;
-    min-width: 300px;
-    min-height: 300px;
-    height: auto;
-    
+    min-width: 200px;
+    min-height: 200px;
+    height: 50vmin;
+    justify-self: center;
 }
 
 h1 span {
     background-color: hsl(132, 46%, 50%);
     border-radius: 5px;
-
-    /* Change  this if no bg color */
-    display: inline;
-    padding: calc((100% - 1em) / 2) 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     transition-duration: 0.5s;
     animation-timing-function: linear;
     animation-name: bobble;
     animation-iteration-count: infinite;
     animation-duration: var(--animation-duration);
-    
+
 }
 
+
+@media (max-width: 550px) {
+
+    main {
+        grid-template-columns: 1fr;
+
+    }
+
+    nav {
+        grid-column: 1;
+        grid-row: 3/4;
+        text-align: center;
+    }
+
+    .intro {
+        grid-column: 1;
+        grid-row: 4/5;
+    }
+
+    .name {
+        font-size: 1em;
+        width: 80vmin;
+        height: 80vmin;
+    }
+}
+
+
+
 @keyframes bobble {
-    0%, 10% {
+
+    0%,
+    10% {
         transform: scale(1);
     }
 
@@ -169,13 +210,13 @@ h1 span:nth-child(5) {
 h1 span:nth-child(6) {
     grid-column: 5;
     grid-row: 3;
-    
+
     animation-delay: calc(var(--animation-delay) * 5);
 }
 
 h1 span:nth-child(7) {
     grid-column: 3;
-    grid-row: 4 ;
+    grid-row: 4;
 
     animation-delay: calc(var(--animation-delay) * 6);
 }
