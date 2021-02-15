@@ -387,21 +387,23 @@ nav a:visited {
 @media (max-width: 850px) {
     .project-page {
         grid-template-columns: 0 1fr 1fr 0 ;
+        grid-template-rows: 50px 50px 1fr;
+    }
+
+    .project-page nav {
+        grid-column: 2/4;
+        grid-row: 1/2;
     }
 
     .project-page h1 {
-        grid-row: 1/2;
-        grid-column: 3/4;
+        grid-row: 2/3;
+        grid-column: 2/4;
         text-align: center;
         padding: 8px;
     }
 
-    .project-page nav {
-        grid-column: 2/3;
-    }
-
     .project-container {
-        grid-row: 2/3;
+        grid-row: 3/4;
         grid-column: 1/4;
         gap: 16px;
         padding: 8px 16px;
