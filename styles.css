@@ -86,6 +86,7 @@ a {
 a:visited {
     color: hsl(241, 47%, 77%);
 }
+
 nav a:visited {
     color: #308240;
 }
@@ -150,8 +151,17 @@ nav a:visited {
 
 }
 
+@media screen and (min-width: 900px) {
 
-@media (max-width: 550px) {
+    .image-profile {
+        display: block;
+        max-width: 400px;
+        width: 250px;
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 700px) {
 
     main {
         grid-template-columns: 1fr;
@@ -318,7 +328,7 @@ nav a:visited {
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 50px 1fr;
-    color:whitesmoke;
+    color: whitesmoke;
 }
 
 .project-page h1 {
@@ -342,7 +352,7 @@ nav a:visited {
     grid-column: 2/3;
     gap: 24px;
     padding: 8px 16px;
-    
+
 }
 
 .project-card {
@@ -370,7 +380,7 @@ nav a:visited {
     grid-column: 1/2;
     min-width: 64px;
     min-height: 64px;
-    padding: 8px 4px ;
+    padding: 8px 4px;
     border-radius: 50%;
     transition: transform .2s;
 }
@@ -386,7 +396,7 @@ nav a:visited {
 
 @media (max-width: 850px) {
     .project-page {
-        grid-template-columns: 0 1fr 1fr 0 ;
+        grid-template-columns: 0 1fr 1fr 0;
         grid-template-rows: 50px 50px 1fr;
     }
 
@@ -408,13 +418,14 @@ nav a:visited {
         gap: 16px;
         padding: 8px 16px;
     }
-    
+
 
     .project-card {
         /* grid-template-columns: 1fr;
         grid-template-rows: 5vmin 30vmin 1fr; */
         min-height: 50vmin;
     }
+
     .project-card img {
         width: 30vmin;
         height: 30vmin;
@@ -423,7 +434,5 @@ nav a:visited {
         min-height: 64px;
     }
 
-    .project-card p {
-        /* grid-row: 3/4; */
-    }
+
 }
