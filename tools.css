@@ -1,0 +1,62 @@
+:root {
+    --tool-color: #306591;
+}
+
+body {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 2fr 1fr ;
+    grid-template-rows: 10vmin 1fr 10vmin;
+    padding: 1vmin;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+h1, h2, label{
+    color: var(--tile-color-black-text);
+}
+
+h1 {
+    grid-column: 1/2;
+}
+
+.converter {
+    height: 80vmin;
+    width: 80vmin;
+    display: grid;
+    grid-column: 1/2;
+    grid-template-rows: 5% 1fr 1fr 1fr;
+    grid-template-columns: 1fr;
+
+    background-color: var(--tool-color);
+    padding: 4px;
+    border-radius: 4px;
+    box-shadow: 2px 2px 2px 2px #173144;
+    
+}
+
+.converter-item {
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+}
+
+textarea {
+    resize: none;
+    height: 60%;
+    max-height: 100%;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 700px) {
+
+    .converter {
+        width: 95vmin;
+        height: 100%;
+    }
+
+
+
+}
+

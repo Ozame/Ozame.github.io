@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Toolkit</title>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="tools.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="tools.css">
+</head>
+
+<body>
+    <h1>Dev Toolkit</h1>
+
+    <div class="converter" x-data="{ hee: '', b64: '', ascii: ''}">
+        <h2>Hex/Base64/ASCII Converter</h2>
+
+        <div class="converter-item">
+            <label for="hex">Hex</label>
+            <textarea name="hex" x-model="hee" x-on:keyup="b64 = hexToBase64(hee); ascii = hexToAscii(hee);" rows="5"
+                cols="30"></textarea>
+        </div>
+
+        <div class="converter-item">
+            <label for="b64">Base64</label>
+            <textarea name="b64" x-model="b64" x-on:keyup="hee = base64ToHex(b64); ascii = hexToAscii(hee)" rows="5"
+                cols="30"></textarea>
+        </div>
+
+        <div class="converter-item">
+            <label for="ascii">ASCII</label>
+            <textarea name="ascii" x-model="ascii" x-on:keyup="hee = asciiToHex(ascii); b64 = hexToBase64(hee);"
+                rows="5" cols="30"></textarea>
+        </div>
+    </div>
+
+</body>
+
+</html>
