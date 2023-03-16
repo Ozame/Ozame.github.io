@@ -104,10 +104,16 @@ nav a:visited {
     grid-column: 2/3;
     grid-row: 2/3;
     font-size: 1.2em;
+    display: flex;
+    gap: 10px;
 }
 
 .intro-container {
-    max-width: 80vmin;
+    max-width: 60%;
+    flex-grow: 2;
+}
+
+.intro-container, .now_container {
     overflow: auto;
     padding: 4px;
     background-color: var(--main-color);
@@ -116,6 +122,47 @@ nav a:visited {
     box-shadow: 4px 4px 8px var(--box-shadow-color);
 }
 
+.now_container {
+    flex-grow: 1;
+    padding: 12px;
+    list-style-position: inside;
+    text-align: center;
+}
+
+li::marker {
+    display: none;
+    visibility: hidden;
+}
+
+.now_container h2 {
+    line-height: 8vmin; 
+  }
+
+.now_container h3 {
+    line-height: 6vmin; 
+  }
+
+.now_container a {
+    color: var(--tile-color-black);
+}]
+
+.now_content {
+    width: 100%;
+}
+
+/* .now_before {} */
+.now_after li::marker {
+    color: var(--main-color);
+}
+
+.now_after ul:last-of-type {
+    padding-bottom: 30px;
+}
+
+.now_updated {
+    font-size: 0.8em;
+}
+    
 .image-profile {
     float: left;
     padding: 8px;
@@ -148,7 +195,6 @@ nav a:visited {
 }
 
 .letter {
-    background-color: hsl(132, 46%, 50%);
     border-radius: 5px;
     display: flex;
     justify-content: center;
@@ -172,6 +218,21 @@ nav a:visited {
     }
 }
 
+@media screen and (max-width: 1200px) {
+
+    .intro {
+        flex-direction: column;
+    }
+
+    .intro-container {
+        max-width: 100%;
+    }
+
+    .now_container {
+        text-align: center;
+    }
+}
+
 @media screen and (max-width: 1000px) {
 
     .intro-container {
@@ -179,6 +240,11 @@ nav a:visited {
         flex-wrap: wrap;
         max-width: 100%;
     }
+
+    .intro {
+        flex-direction: column;
+    }
+
 }
 
 @media screen and (max-width: 700px) {
@@ -205,6 +271,10 @@ nav a:visited {
         width: 95vmin;
         height: 95vmin;
     }
+
+    .now_container h3 {
+        line-height: 8vmin; 
+      }
 }
 
 
