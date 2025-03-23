@@ -19,12 +19,14 @@
 html,
 body {
     height: 100%;
-    width: 100%;
-    background-color: var(--background-color);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
 }
 
 body {
-    display: flex;
+    background-color: var(--background-color);
     justify-content: center;
 }
 
@@ -124,7 +126,7 @@ li::marker {
     display: none;
     visibility: hidden;
 }
-    
+
 .image-profile {
     float: left;
     padding: 8px;
@@ -257,7 +259,7 @@ li::marker {
 
 .letter:nth-child(3) {
     grid-column: 5;
-    grid-row: 2; 
+    grid-row: 2;
     background-color: var(--tile-color-white);
     color: var(--tile-color-white-text);
     animation-delay: calc(var(--animation-delay) * 2);
@@ -369,8 +371,6 @@ li::marker {
 /* ===== Projects page ===== */
 
 .project-page {
-    width: 100vw;
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
     grid-template-rows: 50px 1fr;
