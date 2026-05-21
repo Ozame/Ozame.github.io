@@ -1,62 +1,70 @@
-:root {
-    --tool-color: #306591;
+.tools-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-body {
-    display: grid;
-    justify-content: center;
-    grid-template-columns: 2fr 1fr ;
-    grid-template-rows: 10vmin 1fr 10vmin;
-    padding: 1vmin;
-    height: 100%;
-    overflow: hidden;
-
-}
-
-h1, h2, label{
-    color: var(--tile-color-black-text);
-}
-
-h1 {
-    grid-column: 1/2;
+.tools-main {
+    padding: 0 2rem;
 }
 
 .converter {
-    height: 80vmin;
-    width: 80vmin;
-    display: grid;
-    grid-column: 1/2;
-    grid-template-rows: 5% 1fr 1fr 1fr;
-    grid-template-columns: 1fr;
+    background: var(--surface-color);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(251, 255, 241, 0.1);
+}
 
-    background-color: var(--tool-color);
-    padding: 4px;
-    border-radius: 4px;
-    box-shadow: 2px 2px 2px 2px #173144;
-    
+.converter h2 {
+    margin-bottom: 2rem;
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.converter-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
 }
 
 .converter-item {
     display: flex;
     flex-direction: column;
-    padding: 4px;
+    gap: 0.5rem;
 }
 
-textarea {
-    resize: none;
-    height: 60%;
-    max-height: 100%;
-    max-width: 100%;
+.converter-item label {
+    font-weight: 600;
+    color: var(--accent-primary);
+    font-size: 0.9rem;
+    text-transform: uppercase;
 }
 
-@media screen and (max-width: 700px) {
+.converter-item textarea {
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(251, 255, 241, 0.1);
+    border-radius: 8px;
+    padding: 1rem;
+    color: var(--text-color);
+    font-family: monospace;
+    font-size: 1rem;
+    min-height: 150px;
+    resize: vertical;
+    transition: border-color 0.3s ease;
+}
 
-    .converter {
-        width: 95vmin;
-        height: 100%;
+.converter-item textarea:focus {
+    outline: none;
+    border-color: var(--accent-primary);
+}
+
+@media (max-width: 600px) {
+    .tools-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
     }
-
-
-
 }
-
