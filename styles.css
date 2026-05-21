@@ -258,9 +258,27 @@ footer {
 
 /* Media Queries */
 @media screen and (max-width: 800px) {
-    .hero {
-        flex-direction: column;
+    main {
         gap: 2rem;
+        padding: 1rem;
+    }
+
+    .hero {
+        display: contents; /* Allows children to be reordered within the main flex container */
+    }
+    
+    .name {
+        order: 1; /* Board first */
+        margin: 0 auto;
+    }
+    
+    .intro {
+        order: 2; /* Intro in between */
+        padding: 2rem 1.5rem;
+    }
+
+    .main-nav {
+        order: 3; /* Nav last */
     }
     
     .intro-container {
