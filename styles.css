@@ -101,6 +101,7 @@ main {
     box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     position: relative;
     /* Removed overflow: hidden to allow pieces to pop out on hover */
+    touch-action: none;
 }
 
 /* Perfectly divided 8x8 squares with h1 (bottom-right) as light */
@@ -139,11 +140,26 @@ main {
     width: 80%;
     height: 80%;
     margin: auto;
+    touch-action: none;
 }
 
-.letter:hover {
+.letter:hover:not(.dragging):not(.dropped) {
     transform: scale(1.1) translateY(-10px);
     z-index: 10;
+}
+
+.letter.dragging {
+    cursor: grabbing;
+    transition: none !important;
+}
+
+.letter.snapping {
+    transition: none !important;
+}
+
+.letter.dropped {
+    transform: none !important;
+    transition: none !important;
 }
 
 /* Specific letter positions - Strictly ordered for readability (Top-Bottom, Left-Right)
