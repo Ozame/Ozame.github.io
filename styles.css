@@ -89,17 +89,21 @@ main {
     gap: 0;
     width: 360px;
     aspect-ratio: 1 / 1;
-    height: auto; /* Controlled by aspect-ratio */
+    height: auto;
     padding: 0;
     background-color: var(--accent-tertiary);
-    border: 8px solid var(--accent-tertiary);
-    border-radius: 8px;
-    box-shadow: 0 10px 30px var(--box-shadow-color);
+    
+    /* Wooden border: Rich brown with depth */
+    border: 12px solid #5d4037; 
+    outline: 2px solid #3e2723;
+    border-radius: 4px;
+    
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
     position: relative;
-    overflow: hidden;
+    /* Removed overflow: hidden to allow pieces to pop out on hover */
 }
 
-/* Perfectly divided 8x8 squares using percentages to avoid pixel-rounding issues */
+/* Perfectly divided 8x8 squares with h1 (bottom-right) as light */
 .name::before {
     content: '';
     position: absolute;
@@ -108,14 +112,15 @@ main {
     right: 0;
     bottom: 0;
     background-image: conic-gradient(
-        rgba(251, 255, 241, 0.08) 90deg, 
-        transparent 90deg 180deg, 
-        rgba(251, 255, 241, 0.08) 180deg 270deg, 
-        transparent 270deg
+        transparent 90deg, 
+        rgba(251, 255, 241, 0.08) 90deg 180deg, 
+        transparent 180deg 270deg, 
+        rgba(251, 255, 241, 0.08) 270deg
     );
-    background-size: 25% 25%; /* Creates 8x8 squares across 100% of the container */
+    background-size: 25% 25%;
     z-index: 0;
     pointer-events: none;
+    border-radius: 0;
 }
 
 .letter {
@@ -141,28 +146,27 @@ main {
     z-index: 10;
 }
 
-/* Specific letter positions - Real endgame distribution
+/* Specific letter positions - Strictly ordered for readability (Top-Bottom, Left-Right)
    Name: S-A-M-U K-U-M-P-U-L-A-I-N-E-N (15 letters)
-   Board: 1 (top) to 8 (bottom)
 */
 /* White pieces (Light theme) */
-.letter:nth-child(1)  { grid-column: 7; grid-row: 1; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* s */
-.letter:nth-child(2)  { grid-column: 2; grid-row: 2; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* a */
-.letter:nth-child(4)  { grid-column: 5; grid-row: 3; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* u */
-.letter:nth-child(6)  { grid-column: 8; grid-row: 4; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* u */
-.letter:nth-child(8)  { grid-column: 3; grid-row: 5; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* p */
-.letter:nth-child(10) { grid-column: 6; grid-row: 6; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* l */
-.letter:nth-child(12) { grid-column: 1; grid-row: 7; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* i */
-.letter:nth-child(14) { grid-column: 4; grid-row: 8; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* e */
+.letter:nth-child(1)  { grid-column: 3; grid-row: 1; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* s */
+.letter:nth-child(3)  { grid-column: 8; grid-row: 2; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* m */
+.letter:nth-child(5)  { grid-column: 6; grid-row: 3; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* k */
+.letter:nth-child(7)  { grid-column: 4; grid-row: 4; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* m */
+.letter:nth-child(9)  { grid-column: 7; grid-row: 5; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* u */
+.letter:nth-child(11) { grid-column: 5; grid-row: 6; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* a */
+.letter:nth-child(13) { grid-column: 8; grid-row: 7; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* n */
+.letter:nth-child(15) { grid-column: 7; grid-row: 8; background: var(--tile-color-white); color: var(--tile-color-white-text); } /* n */
 
 /* Black pieces (Dark theme) */
-.letter:nth-child(3)  { grid-column: 4; grid-row: 2; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* m */
-.letter:nth-child(5)  { grid-column: 1; grid-row: 3; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* k */
-.letter:nth-child(7)  { grid-column: 2; grid-row: 4; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* m */
-.letter:nth-child(9)  { grid-column: 6; grid-row: 5; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* u */
-.letter:nth-child(11) { grid-column: 3; grid-row: 6; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* a */
-.letter:nth-child(13) { grid-column: 7; grid-row: 7; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* n */
-.letter:nth-child(15) { grid-column: 2; grid-row: 8; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* n */
+.letter:nth-child(2)  { grid-column: 5; grid-row: 2; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* a */
+.letter:nth-child(4)  { grid-column: 2; grid-row: 3; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* u */
+.letter:nth-child(6)  { grid-column: 1; grid-row: 4; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* u */
+.letter:nth-child(8)  { grid-column: 3; grid-row: 5; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* p */
+.letter:nth-child(10) { grid-column: 2; grid-row: 6; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* l */
+.letter:nth-child(12) { grid-column: 3; grid-row: 7; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* i */
+.letter:nth-child(14) { grid-column: 4; grid-row: 8; background: var(--tile-color-black); color: var(--tile-color-black-text); } /* e */
 
 /* Main Navigation */
 .main-nav ul {
