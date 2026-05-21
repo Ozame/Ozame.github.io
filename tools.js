@@ -34,5 +34,5 @@ function hexToBase64(hexString) {
       var hex = Number(str.charCodeAt(i)).toString(16);
       arr.push(hex);
     }
-    return arr.join('');
+    return arr.join('').toUpperCase();
   }

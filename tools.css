@@ -26,7 +26,7 @@
 
 .converter-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 2rem;
 }
 
@@ -52,6 +52,7 @@
     font-family: monospace;
     font-size: 1rem;
     min-height: 150px;
+    width: 100%;
     resize: vertical;
     transition: border-color 0.3s ease;
 }
@@ -66,5 +67,19 @@
         flex-direction: column;
         gap: 1rem;
         text-align: center;
+        padding: 1rem;
+    }
+
+    .tools-main {
+        padding: 0 1rem;
+    }
+
+    .converter {
+        padding: 1.5rem 1rem;
+    }
+
+    .converter h2 {
+        font-size: 1.2rem;
+        margin-bottom: 1.5rem;
     }
 }
